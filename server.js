@@ -3,20 +3,21 @@
 var express = require('express');
 var server = express();
 var bodyParser = require('body-parser');
+var path = require('path');
+
 
 server.use(bodyParser());
 
+server.set('views', path.join(__dirname, 'views'));
+server.set('view engine', 'ejs');
+
 var port = process.env.PORT || 8080;
 
-var router = express.Router();
-
-router.get('/', function(req, res) {
-	res.json({message: 'hooray! welcome to our api!'});
+server.get('/', function(req, res) {
+	res.render("login.ejs");
 });
 
-server.use('/api', router);
-
-server.use(express.static('~/nodeWorkspace/stormpath-express-app/views/login.html'));
+server.use(express.static(__dirname + '/static'));
 
 server.listen(port);
 console.log('Magic happens on port ' + port);
