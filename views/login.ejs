@@ -13,26 +13,13 @@
     <script src ="/app.js"></script>
 
     <div class="container">
-        <form class="form-signin" role="form" ng-submit="submitFunction()" ng-controller="loginController">
-        <h2 class="form-signin-heading">Have an Account?</h2>
-
-        <input type="text" class="form-control" placeholder="Email address or username" ng-model="userName">
-        <input type="password" class="form-control" placeholder="Password" ng-model="password">
-        <button class="btn btn-lg btn-primary btn-block" type="submit" >Sign In</button>
-
-    </form>
-
-    <form class="form-signin" role="form" ng-submit="signUp()" ng-controller="makeAccountController">
-
-        <h2 class="form-signin-heading">No Account? Sign up!</h2>
-
-        <input type="text" class="form-control" placeholder="First name" ng-model="firstName">
-        <input type="text" class="form-control" placeholder="Last name" ng-model="lastName">
-        <input type="text" class="form-control" placeholder="Username" ng-model="userName">
-        <input type="text" class="form-control" placeholder="Email address" ng-model="email">
-        <input type="password" class="form-control" placeholder="Password" ng-model="password">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Make Account</button>
-    </form>
+        <div class="loginButton" ng-controller="loginController">
+            <button class="btn btn-lg btn-primary btn-block" ng-click="submitFunction()" type="submit" >Sign In</button> <br>
+        </div>
+        <div class="creatAccountButton" ng-controller="makeAccountController"> 
+            <button class="btn btn-lg btn-primary btn-block" ng-submit="signUp()" ng-submit="signUp()" type="submit">Make Account</button>
+        </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="/bootstrap/js/bootstrap.min.js"></script>

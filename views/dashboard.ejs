@@ -12,6 +12,11 @@
 </head>
 <body>
 
+<script type="text/javascript">
+  window.apiKeyId = "<%= apiKeyId %>";
+  window.apiKeySecret = "<%= apiKeySecret %>";
+</script>
+
 <div id="wrapper">
 
     <!-- Sidebar -->
@@ -41,12 +46,12 @@
        <div class="col-xs-2"></div>
        <div class="col-xs-10">
 
-           <div class="apiKey" ng-controller="ApiKeyController">
+           <div class="apiKey">
                <header>
-                   <h1> {{ userName }}'s Dashboard</h1>
+                   <h1> <%= username %>'s Dashboard</h1>
                </header>
                <span id="apiText"> apiKey : apiKeySecret</span> </br>
-              <span id="apiKeyId">{{ apiKey }}</span> : <span id="apiKeySecret">{{ apiSecret }}</span>
+              <span id="apiKeyId"><%= apiKeyId %></span> : <span id="apiKeySecret"><%= apiKeySecret %></span>
            </div>
 
            <div class="jumbotron">
