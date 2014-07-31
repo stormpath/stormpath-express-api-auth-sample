@@ -134,7 +134,7 @@ myApp.controller('OauthTokenController', ["$scope", "$http", "$window",'sharedPr
         console.log(myData);
 
         //Try and get an Oauth Token
-        $http({method: "POST", url: '/oauthToken',
+        $http({method: "POST", url: '/oauth',
             headers: {'Authorization': 'Basic ' + sharedProperties.getEncodedAuth(), 'Content-Type': 'application/x-www-form-urlencoded'},
             data : myData})
 
@@ -160,8 +160,8 @@ myApp.controller('RestOauthController', ["$scope", "$window", "$http", 'sharedPr
     $scope.makeRestCall = function() {
 
         //Get the temperature of specified city from REST endpoint, using Oauth
-        $http({method: "GET", url: '/rest/api/weather/' + $scope.city, headers: {'Authorization': 'Bearer ' + sharedProperties.getOauthToken()}}).success(function(data, status, headers, config) {
-            $scope.temp = data;
+        $http({method: "GET", url: '/weather/' + $scope.city, headers: {'Authorization': 'Bearer ' + sharedProperties.getOauthToken()}}).success(function(data, status, headers, config) {
+            $scope.temp = data + ' F';
             $scope.myCity = $scope.city;
 
         })
