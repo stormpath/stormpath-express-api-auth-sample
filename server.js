@@ -14,7 +14,6 @@ var apiKeySecret = "";
 
 //server.use(bodyParser());
 server.use(stormpath.init(server, {
-	apiKeyFile: '/Users/rkazarin/.stormpath/apiKey.properties',
 	application: 'https://api.stormpath.com/v1/applications/5HRNSljrcYQax0oCQQovT9',
 	secretKey: 'askjdhaslkjdhwlieuhdwljihdiu2yrp9823yrilhp9823yerhiuqhrp9283yehiuqwhep81732eyhiquwoghp8971yehilqusjd',
 	redirectUrl: '/',
