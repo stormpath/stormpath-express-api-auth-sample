@@ -380,6 +380,11 @@ p {
                     <a id="logoutLink" href ng-click="makeLogoutCall()"> Logout</a>
                  </div>
             </li>
+            <hr>
+            <span style="color:white"> Hint: Open up the Web Inspector of your browser and navigate to the
+            Network tab. Now, once you make calls to the REST endpoints, pay attention to the 'authorization' header
+            to see how I pass my tokens to the server. Also, when generating the OAUTH token, check the body of the request to see
+            how scopes are passed as well as the body of the response to see the Oauth token coming back to the client. </span>
         </ul>
     </div>
 </div>
