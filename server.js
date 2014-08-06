@@ -16,7 +16,7 @@ var apiKeySecret = "";
 server.use(stormpath.init(server, {
 	application: 'https://api.stormpath.com/v1/applications/5HRNSljrcYQax0oCQQovT9',
 	secretKey: 'askjdhaslkjdhwlieuhdwljihdiu2yrp9823yrilhp9823yerhiuqhrp9283yehiuqwhep81732eyhiquwoghp8971yehilqusjd',
-	redirectUrl: '/',
+	redirectUrl: '/dashboard',
 	getOauthTokenUrl: '/oauth',
 	oauthTTL: 3600
 }));
@@ -29,7 +29,7 @@ var port = process.env.PORT || 8080;
 
 //Routing
 server.get('/', function(req, res) {
-	res.render("login.ejs");
+	res.redirect(302, "/login");
 });
 
 server.get('/dashboard', stormpath.loginRequired, function(req, res) {
