@@ -1,14 +1,10 @@
-//server.js
-
 //Server Setup
 var express = require('express');
 var server = express();
-//var bodyParser = require('body-parser');
 var path = require('path');
 var stormpath = require('express-stormpath');
 var http = require("http");
 
-//server.use(bodyParser());
 server.use(stormpath.init(server, {
   application: process.env['STORMPATH_APP_HREF'],
   secretKey: process.env['STORMPATH_SECRET_KEY'],
@@ -39,9 +35,9 @@ server.get('/dashboard', stormpath.loginRequired, function(req, res) {
         res.locals.apiKeySecret = apiKey.secret;
         res.locals.username = res.locals.user.username;
         apiKeyId = apiKey.id;
-        apiKeySecret = apiKey.secret; 
+        apiKeySecret = apiKey.secret;
         res.render("dashboard.ejs");
-        return; 
+        return;
       })
 
     }
@@ -69,7 +65,7 @@ server.get('/weather/:city', stormpath.apiAuthenticationRequired, function(req, 
   else if(req.headers.authorization.substring(0, 6) === 'Bearer') {
      var requestedCity = req.params.city.replace(/\s+/g, '');
      if(res.locals.permissions.indexOf(requestedCity) >= 0){
-      getWeather(); 
+      getWeather();
      }
      else {
       res.status(403).end();
