@@ -8,10 +8,6 @@ var path = require('path');
 var stormpath = require('express-stormpath');
 var http = require("http");
 
-
-var apiKeyId = "";
-var apiKeySecret = "";
-
 //server.use(bodyParser());
 server.use(stormpath.init(server, {
   application: process.env['STORMPATH_APP_HREF'],
@@ -37,7 +33,7 @@ server.get('/dashboard', stormpath.loginRequired, function(req, res) {
   console.log('/dashboard');
 
   res.locals.user.getApiKeys(function(err, collectionResult) {
-    if(collectionResult.items.length == 0) {
+    if(collectionResult.items.length === 0) {
       res.locals.user.createApiKey(function(err, apiKey) {
         res.locals.apiKeyId = apiKey.id;
         res.locals.apiKeySecret = apiKey.secret;
@@ -66,11 +62,11 @@ server.get('/dashboard', stormpath.loginRequired, function(req, res) {
 
 server.get('/weather/:city', stormpath.apiAuthenticationRequired, function(req, res) {
 
-  if(req.headers.authorization.substring(0, 5) == 'Basic') {
+  if(req.headers.authorization.substring(0, 5) === 'Basic') {
     getWeather();
 
   }
-  else if(req.headers.authorization.substring(0, 6) == 'Bearer') {
+  else if(req.headers.authorization.substring(0, 6) === 'Bearer') {
      var requestedCity = req.params.city.replace(/\s+/g, '');
      if(res.locals.permissions.indexOf(requestedCity) >= 0){
       getWeather(); 

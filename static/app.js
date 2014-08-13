@@ -118,8 +118,8 @@ myApp.controller('OauthTokenController', ["$scope", "$http", "$window",'sharedPr
         var first = 0;
         for(var i in $scope.ids) {
             console.log(i + "=" + $scope.ids[i]);
-            if($scope.ids[i] == true){
-                if(first == 0) {
+            if($scope.ids[i] === true){
+                if(first === 0) {
                     scopeData = scopeData + i;
                     first = 1;
                 }
@@ -128,6 +128,7 @@ myApp.controller('OauthTokenController', ["$scope", "$http", "$window",'sharedPr
                 }
             }
         }
+
 
         myData = $.param({grant_type: "client_credentials", scope: scopeData});
 
