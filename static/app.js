@@ -98,7 +98,7 @@ myApp.controller('RestBasicController', ["$scope", "$window", "$http", 'sharedPr
         })
             .error(function(data, status, headers, config) {
                 $window.alert("Error");
-            });
+        });
 
     }
 }]);
@@ -167,7 +167,7 @@ myApp.controller('RestOauthController', ["$scope", "$window", "$http", 'sharedPr
         })
             .error(function(data, status, headers, config) {
                 $window.alert("Permission Denied!");
-            });
+        });
 
     }
 }]);

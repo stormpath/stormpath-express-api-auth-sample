@@ -66,8 +66,6 @@ server.get('/dashboard', stormpath.loginRequired, function(req, res) {
 
 server.get('/weather/:city', stormpath.apiAuthenticationRequired, function(req, res) {
 
-	console.log('/weather/' + req.params.city);
-
 	if(req.headers.authorization.substring(0, 5) == 'Basic') {
 		getWeather();
 
