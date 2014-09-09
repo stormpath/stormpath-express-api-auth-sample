@@ -26,11 +26,12 @@ $ touch .env
 ```
 
 Inside, add the following:
+```
   export STORMPATH_API_KEY_ID=[api_key_id]
   export STORMPATH_API_KEY_SECRET=[api_key_secret]
   export STORMPATH_APP_HREF=[app_href]
   export STORMPATH_SECRET_KEY=[secret_key]
-  
+```
 Export the .env file:
 ```bash
 $ source .env
