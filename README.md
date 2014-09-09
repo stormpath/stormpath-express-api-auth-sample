@@ -7,8 +7,7 @@ A sample web application using node.js and Stormpath Express integration
 To get started, clone this repository locally:
 
 ```bash
-$ git clone https://github.com/rkazarin/stormpath-express-sample.git
-```
+$ git clone https://github.com/stormpath/stormpath-express-api-auth-sample
 
 Next, go into the sample app directory:
 
