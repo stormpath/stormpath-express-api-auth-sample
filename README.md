@@ -8,7 +8,7 @@ To get started, clone this repository locally:
 
 ```bash
 $ git clone https://github.com/stormpath/stormpath-express-api-auth-sample
-
+```
 Next, go into the sample app directory:
 
 ```bash
