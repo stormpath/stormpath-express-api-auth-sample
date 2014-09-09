@@ -58,11 +58,11 @@ server.get('/dashboard', stormpath.loginRequired, function(req, res) {
 
 server.get('/weather/:city', stormpath.apiAuthenticationRequired, function(req, res) {
 
-  if(req.headers.authorization.substring(0, 5) === 'Basic') {
+  if(req.headers.authorization.indexOf('Basic') === 0) {
     getWeather();
 
   }
-  else if(req.headers.authorization.substring(0, 6) === 'Bearer') {
+  else if(req.headers.authorization.indexOf('Bearer') === 0) {
      var requestedCity = req.params.city.replace(/\s+/g, '');
      if(res.locals.permissions.indexOf(requestedCity) >= 0){
       getWeather();
