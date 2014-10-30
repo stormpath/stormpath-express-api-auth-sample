@@ -1,6 +1,19 @@
-# stormpath-express-sample
+# stormpath-express-api-auth-sample
 
-A sample web application using node.js and Stormpath Express integration 
+This sample web application uses node.js and [Stormpath-Express](https://github.com/stormpath/stormpath-express) to secure an API:
+
++ Assign API keys to users stored in Stormpath 
++ Generate, manage and revoke keys
++ Authenticate users to your API using HTTP Basic Auth or OAuth2 
++ Manage scopes
+
+[Stormpath-Express](https://github.com/stormpath/stormpath-express) is an extension for Express.js that makes it incredibly simple to add users and user data to your application. It aims to completely abstract away all user registration, login, authentication, and authorization problems, including API authentication
+
+## Links
++ [API Authentication Tutorial for Node](https://stormpath.com/blog/express-sample-api-key-management/) - walks you though this sample
++ [express-stormpath documentation](http://docs.stormpath.com/nodejs/express/)
++ [Stormpath Node.js SDK](https://github.com/stormpath/stormpath-sdk-node)
++ [Stormpath website](http://stormpath.com/)
 
 ## Getting started
 
@@ -61,3 +74,17 @@ Here are some screenshots to give you a feel of what you are in for:
 ![Permitted OAuth call](https://github.com/stormpath/stormpath-express-api-auth-sample/raw/master/assets/permittedoauth.png)
 
 ![Denied OAuth call](https://github.com/stormpath/stormpath-express-api-auth-sample/raw/master/assets/deniedoauth.png)
+
+
+### Contributing 
+
+You can make your own contributions by forking the <code>development</code> branch, making your changes, and issuing pull-requests on the <code>development</code> branch.
+
+We regularly maintain our GitHub repostiory, and are quick about reviewing pull requests and accepting changes!
+
+### Copyright ###
+
+Copyright &copy;2014 Stormpath, Inc. and contributors.
+
+This project is open-source via the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0).
+
